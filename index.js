@@ -8,16 +8,16 @@ function map(array, func){
   return answer
 }
 
-function reduce(array, sv=0){
+function reduce(array, func, sv=0){
     if (sv){
-        let sum =sv
-        let i =0
+        var sum = sv
+        var i = 0
     }else{
-        let sum = array[0]
-        let i = 1
+        var sum = array[0]
+        var i = 1
     }
     while (i < array.length){
-        console.log(sum)
+        sum = func(sum, array[i])
         i += 1
     }
     return sum
